@@ -1,0 +1,5 @@
+::1 - - [18/Mar/2019:20:46:23 +0000] "GET /dancers HTTP/1.1" 200 667 "-" "PostmanRuntime/7.6.1"
+::1 - - [18/Mar/2019:20:46:38 +0000] "GET /dancers/1ainjruutd1j HTTP/1.1" 200 1815 "-" "PostmanRuntime/7.6.1"
+::1 - - [18/Mar/2019:22:02:24 +0000] "GET /events HTTP/1.1" 200 2 "-" "PostmanRuntime/7.6.1"
+::1 - - [18/Mar/2019:22:04:38 +0000] "GET /events HTTP/1.1" 200 14530 "-" "PostmanRuntime/7.6.1"
+::1 - - [18/Mar/2019:22:05:05 +0000] "GET /events HTTP/1.1" 200 14519 "-" "PostmanRuntime/7.6.1"
