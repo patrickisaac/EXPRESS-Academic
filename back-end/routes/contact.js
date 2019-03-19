@@ -19,7 +19,7 @@ const virtualNumber = NX_NUMBER
 
 
 router.post('/', (req, res) => {
-  const { name, email, number } = req.body
+  const { name, email, number, instructor } = req.body
   const emailMessage =
     `<p>You will receive addition information once your email has been verified.</p>
    <p><a href="http://localhost:8080/confirm?email=${email}">Confirm Email</a></p>`
@@ -42,7 +42,8 @@ router.post('/', (req, res) => {
   Client.create({
     name,
     email,
-    number
+    number,
+    instructor
   }).then(result => {
     transporter.sendMail(mailOptions, function (error, info) {
       if (error) {
@@ -63,39 +64,5 @@ router.post('/', (req, res) => {
       })
     }).done()
 })
-
-
-router.get('/', (req, res) => {
-  const { email } = req.query
-  Client.findOne({
-    where: { email: email }
-  }).then(result => {
-    const updateData = {
-      validated: true
-    }
-    Client.update(updateData, {
-          where: { email: email }
-    })
-    Client.findOne({
-      where: { email: email}
-    }).then(client => {
-      nexmo.message.sendSms(
-        virtualNumber, `1${client.number}`,
-        `Hello ${client.name}! The instructor will be contacting you shortly!`,
-        (err, responseData) => {
-          if (err) {
-            console.log(err);
-          } else {
-            console.dir(responseData);
-          }
-        }
-      )
-      res.json({
-        validated: true
-      })
-    })
-  })
-})
-
 
 module.exports = router
