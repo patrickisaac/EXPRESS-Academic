@@ -13,36 +13,30 @@ const nexmo = new Nexmo({
 })
 const virtualNumber = NX_NUMBER
 
-
 router.get('/', (req, res) => {
   const { email } = req.query
   Client.findOne({
     where: { email: email }
   }).then(result => {
-    const updateData = {
-      validated: true
-    }
+    const updateData = { validated: true }
     Client.update(updateData, {
-          where: { email: email }
+      where: { email: email }
     })
     Client.findOne({
-      where: { email: email}
+      where: { email: email }
     })
     .then(client => {
       nexmo.message.sendSms(
         virtualNumber, `1${client.number}`,
-        `Hello ${client.name}! ${client.instructor} will be contacting you shortly!`,
+        `Hello ${client.name}! Thank you for choosing EXPRESS! ${client.instructor} will be contacting you shortly!`,
         (err, responseData) => {
           if (err) {
             console.log(err);
           } else {
             console.dir(responseData);
           }
-        }
-      )
-      res.json({
-        validated: true
-      })
+        })
+      res.json("Your email has been validated. Please check your phone for further information.")
     })
   })
 })
