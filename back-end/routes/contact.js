@@ -1,4 +1,4 @@
-const { 
+const {
   NX_API_KEY,
   NX_API_SECRET,
   NX_NUMBER,
@@ -17,8 +17,13 @@ const nexmo = new Nexmo({
 })
 const virtualNumber = NX_NUMBER
 
+
 router.post('/', (req, res) => {
   const { name, email, number } = req.body
+  const emailMessage =
+    `<p>You will receive addition information once your email has been verified.</p>
+   <p><a href="http://localhost:8080/confirm?email=${email}">Confirm Email</a></p>`
+
   const transporter = nodemailer.createTransport({
     service: 'gmail',
     auth: {
@@ -31,9 +36,7 @@ router.post('/', (req, res) => {
     from: EMAIL,
     to: email,
     subject: 'Please Validate Email',
-    //Use for validation
-   // html: `<p><a href="http://localhost:8080/confirm?email=${email}">Confirm Email</a></p>` //
-    text: "This is a test"
+    html: emailMessage
   }
 
   Client.create({
@@ -49,28 +52,59 @@ router.post('/', (req, res) => {
       }
     })
   }).then(result => {
-    nexmo.message.sendSms(
-      virtualNumber, `1${number}`, "test",
-      (err, responseData) => {
-        if (err) {
-          console.log(err);
-        } else {
-          console.dir(responseData);
-        }
-      }
-    )
     res.json({
       formSent: true
     })
   })
-  .catch(err => {
-    console.log(err)
-    res.json({
-      formSent: false
-    })
-  }).done()    
+    .catch(err => {
+      console.log(err)
+      res.json({
+        formSent: false
+      })
+    }).done()
 })
 
+// router.get('/', (req, res) => {
+//   const { email } = req.query
+//   Client.findOne({
+//     where: { email: email }
+//   }).then(result => {
+//     res.json(result.name)
+//   })
+// })
+
+
+router.get('/', (req, res) => {
+  const { email } = req.query
+  Client.findOne({
+    where: { email: email }
+  }).then(result => {
+    const updateData = {
+      validated: true
+    }
+    Client.update(updateData, {
+          where: { email: email }
+    })
+    Client.findOne({
+      where: { email: email}
+    }).then(client => {
+      nexmo.message.sendSms(
+        virtualNumber, `1${client.number}`,
+        `Hello ${client.name}! The instructor will be contacting you shortly!`,
+        (err, responseData) => {
+          if (err) {
+            console.log(err);
+          } else {
+            console.dir(responseData);
+          }
+        }
+      )
+      res.json({
+        validated: true
+      })
+    })
+  })
+})
 
 
 module.exports = router

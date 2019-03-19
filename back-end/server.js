@@ -13,6 +13,7 @@ app.use('/', logger)
 app.use('/events', events)
 app.use('/dancers', dancerInfo)
 app.use('/contact', contactForm)
+app.use('/confirm', contactForm)
 
 app.listen(PORT, () => {
   console.log(`Server running and listening on port ${PORT}...`)
