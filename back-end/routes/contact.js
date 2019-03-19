@@ -64,15 +64,6 @@ router.post('/', (req, res) => {
     }).done()
 })
 
-// router.get('/', (req, res) => {
-//   const { email } = req.query
-//   Client.findOne({
-//     where: { email: email }
-//   }).then(result => {
-//     res.json(result.name)
-//   })
-// })
-
 
 router.get('/', (req, res) => {
   const { email } = req.query
