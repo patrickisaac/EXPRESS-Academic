@@ -1,16 +1,22 @@
 import React, { Component } from 'react';
-import 'typeface-roboto';
 import './App.css';
+import { BrowserRouter, Route, Switch } from 'react-router-dom'
+import Nav from './Components/Nav'
 
-class App extends Component {
-  render() {
-    return (
-      <div className="App">
-        <h1>Test</h1>
-        <p>This is a paragraph</p>
-      </div>
-    );
-  }
-}
+const App = () => (
+    <div>
+      <BrowserRouter>
+        <div>
+        <Nav />
+        <Switch>
+          <Route exact path='/' component={Main} />
+          <Route path='/dancers' component={Main} />
+          <Route path='/events' component={Main} />
+          <Route path='/contact' component={Main} />
+        </Switch>
+        </div>
+      </BrowserRouter>
+    </div> 
+)
 
 export default App;
