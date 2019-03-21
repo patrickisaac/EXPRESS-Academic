@@ -4,7 +4,8 @@ import axios from 'axios'
 class DancerDetails extends React.Component {
   state = {
     dancerDetail: [],
-    locations: []
+    locations: [],
+    comments: []
   }
 
   componentDidMount() {
@@ -16,7 +17,8 @@ class DancerDetails extends React.Component {
       .then(response => {
         this.setState({
           dancerDetail: response.data,
-          locations: response.data.locations
+          locations: response.data.locations,
+          comments: response.data.comments
         })
       })
   }

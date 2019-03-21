@@ -21,12 +21,20 @@ class Events extends React.Component {
 
   render() {
     const eventList = this.state.events.map((event, id) => {
+      if(event.logo || event.summary !== null) {
+        return (
+          <div key={id}>
+          <h2>{event.name.text}</h2>
+          <h3>{event.summary}</h3>
+          <p>{event.start.local}</p>
+          <img src={event.logo.original.url} width='150' alt='' />
+          </div>
+        )
+      }
       return (
         <div key={id}>
         <h2>{event.name.text}</h2>
-        <h4>{event.summary}</h4>
-        <h4>{event.start.local}</h4>
-        <img src={event.logo.original.url} width='150px' alt='' />
+        <p>{event.start.local}</p>
         </div>
       )
     })
