@@ -20,10 +20,10 @@ class Events extends React.Component {
   }
 
   render() {
-    const eventList = this.state.events.map((event, i) => {
+    const eventList = this.state.events.map((event, id) => {
       return (
-        <div>
-        <h2 key={i}>{event.name.text}</h2>
+        <div key={id}>
+        <h2>{event.name.text}</h2>
         <h4>{event.summary}</h4>
         <h4>{event.start.local}</h4>
         <img src={event.logo.original.url} width='150px' alt='' />

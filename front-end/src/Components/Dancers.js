@@ -1,12 +1,16 @@
 import React from 'react'
 import axios from 'axios'
+import { Link } from 'react-router-dom'
 
 class Dancers extends React.Component {
+  _isMounted = false
+
   state = {
-    dancers: []
+    dancers: [],
   }
 
   getDancers = () => {
+    this._isMounted = true
     axios.get('/dancers')
       .then(response => {
         this.setState ({
@@ -20,13 +24,15 @@ class Dancers extends React.Component {
   }
 
   render() {
-    const dancersList = this.state.dancers.map((dancer, i) => {
+    const dancersList = this.state.dancers.map((dancer, id) => {
       return (
-        <div>
+        <div key={id}>
+        <Link to={'/dancers/' + dancer.id}>
           <img src={dancer.image} width='150px' alt='' />
-          <h3 key={i}>{dancer.name}</h3>
+          <h3>{dancer.name}</h3>
           <h4>Age:{dancer.age}</h4>
           <h4>Years of Dance Experience:{dancer.experience}</h4>
+         </Link> 
         </div>
       )
     })
