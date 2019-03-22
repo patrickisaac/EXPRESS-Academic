@@ -7,7 +7,7 @@ const nodemailer = require('nodemailer')
 router.post('/', (req, res) => {
   const { name, email, number, instructor } = req.body
   const emailMessage = `<p>You will receive addition information once your email has been verified.</p>
-   <p><a href="http://localhost:8080/confirm?email=${email}">Confirm Email</a></p>`
+   <p><a href="https://express-capstone-backend.ngrok.io/confirm?email=${email}">Confirm Email</a></p>`
 
   const transporter = nodemailer.createTransport({
     service: 'gmail',
@@ -45,7 +45,8 @@ router.post('/', (req, res) => {
     .catch(err => {
       console.log(err)
       res.json({ formSent: false })
-    }).done()
+    })
+    .done()
 })
 
 module.exports = router

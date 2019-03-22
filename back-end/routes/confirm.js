@@ -25,19 +25,19 @@ router.get('/', (req, res) => {
     Client.findOne({
       where: { email: email }
     })
-    .then(client => {
-      nexmo.message.sendSms(
-        virtualNumber, `1${client.number}`,
-        `Hello ${client.name}! Thank you for choosing EXPRESS! ${client.instructor} will be contacting you shortly!`,
-        (err, responseData) => {
-          if (err) {
-            console.log(err);
-          } else {
-            console.dir(responseData);
-          }
-        })
-      res.json("Your email has been validated. Please check your phone for further information.")
-    })
+      .then(client => {
+        nexmo.message.sendSms(
+          virtualNumber, `1${client.number}`,
+          `Hello ${client.name}! Thank you for choosing EXPRESS! ${client.instructor} will be contacting you shortly!`,
+          (err, responseData) => {
+            if (err) {
+              console.log(err);
+            } else {
+              console.dir(responseData);
+            }
+          })
+        res.json("Your email has been validated. Please check your phone for further information.")
+      })
   })
 })
 

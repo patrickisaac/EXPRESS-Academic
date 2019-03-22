@@ -1,5 +1,6 @@
 import React from 'react'
 import axios from 'axios'
+import CommentSection from './CommentSection'
 
 class DancerDetails extends React.Component {
   state = {
@@ -38,6 +39,7 @@ class DancerDetails extends React.Component {
           {locationsList}
         </ul>
         <iframe src={video} title={name}></iframe>
+        <CommentSection comments={this.state.comments}/>
       </div>
     )
   }
