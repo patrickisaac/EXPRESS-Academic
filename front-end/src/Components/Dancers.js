@@ -1,6 +1,7 @@
 import React from 'react'
 import axios from 'axios'
 import { Link } from 'react-router-dom'
+import '../Styles/Dancers/styles.css'
 
 class Dancers extends React.Component {
   _isMounted = false
@@ -25,19 +26,22 @@ class Dancers extends React.Component {
   render() {
     const dancersList = this.state.dancers.map((dancer, id) => {
       return (
-        <div key={id}>
-        <Link to={'/dancers/' + dancer.id}>
-          <img src={dancer.image} width='150px' alt='' />
-          <h3>{dancer.name}</h3>
-          <h4>Age:{dancer.age}</h4>
-          <h4>Years of Dance Experience:{dancer.experience}</h4>
-         </Link> 
-        </div>
+        <Link className='dancer__links' key={id}to={'/dancers/' + dancer.id}>
+          <div className='dancer__container'>
+            <div className='dancer__img'>
+              <img src={dancer.image} alt={dancer.image} />
+            </div>
+            <div className='dancer__information'>
+              <h4>{dancer.name}</h4>
+              <p>Age: {dancer.age}</p>
+              <p>Years of Dance Experience: {dancer.experience}</p>
+            </div>
+          </div>
+        </Link> 
       )
     })
     return (
-      <div>
-        <h2>DANCERS</h2>
+      <div className='dancer__wrapper'>
         {dancersList}
       </div>
     )

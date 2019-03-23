@@ -4,3 +4,14 @@ $blueGrey: #cfd8dc;
 $mercury: #E1E1E1;
 $black: #323232;
 
+button {
+  background-color: $lightBlueGrey;
+  padding: 20px;
+  border: 2px solid $black;
+  border-radius: 5px;
+  font-weight: bold
+}
+
+.main__button-container {
+  margin: 30px;
+}

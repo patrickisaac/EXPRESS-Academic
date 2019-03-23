@@ -1,5 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import '../Styles/Buttons/styles.css'
 
 class BookNowBtn extends React.Component {
   render() {
