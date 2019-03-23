@@ -1,0 +1,11 @@
+.main__wrapper .main__container {
+  background-color: #fafafa;
+  padding: 15px;
+  text-align: center;
+}
+
+.main__wrapper .main__container img {
+  max-width: 400px;
+  width: 95%;
+}
+/*# sourceMappingURL=styles.css.map */

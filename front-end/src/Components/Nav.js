@@ -1,16 +1,39 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
+import { Link, NavLink } from 'react-router-dom'
+import '../Styles/Nav/styles.css'
 
 class Nav extends React.Component {
   render() {
     return (
-      <div>
-        {/* <h1>EXPRESS</h1> */}
-        <div><Link to='/'><img src='../Assets/express.png' width='150' alt=''/></Link></div>
-        <div><Link to='/dancers'>View Local Dancers</Link></div>
-        <div><Link to='/events'>View Local Dance Events</Link></div>
-        <div><Link to='/contact'>Contact Us!</Link></div>
-    </div>
+      <div className='navbar__wrapper'>
+        <div className='navbar__container'>
+          <div>
+            <Link to='/'>
+              <img className='logo' src='../Assets/Express-E.png' alt='logo' />
+            </Link>
+          </div>
+          <div className='navbar__links'>
+            <NavLink 
+            className='navbar__link' 
+            activeClassName='activeRoute' 
+            to='/dancers'>
+              Dancers
+            </NavLink>
+            <NavLink 
+            className='navbar__link' 
+            activeClassName='activeRoute' 
+            to='/events'>
+              Events
+            </NavLink>
+            <NavLink 
+            className='navbar__link' 
+            activeClassName='activeRoute' 
+            to='/contact'>
+              Contact
+            </NavLink>
+          </div>
+        </div>
+      </div>
     )
   }
 }

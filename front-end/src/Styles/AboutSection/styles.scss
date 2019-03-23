@@ -1,0 +1,23 @@
+//COLOURS//
+$lightBlueGrey: #eceff1;
+$blueGrey: #cfd8dc;
+$mercury: #E1E1E1;
+$black: #323232;
+
+.about__wrapper {
+  margin: 25px;
+  text-align: center;
+
+  .about__container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    p {
+      max-width: 450px;
+      margin: 5px;
+      text-align: center;
+    }
+  }
+}

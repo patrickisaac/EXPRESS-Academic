@@ -1,4 +1,4 @@
-const { MYEMAIL, MYPASSWORD } = process.env
+const { MYEMAIL, MYPASSWORD, BACKEND_SERVER } = process.env
 const express = require('express')
 const router = express.Router()
 const { Client } = require('../models')
@@ -7,7 +7,7 @@ const nodemailer = require('nodemailer')
 router.post('/', (req, res) => {
   const { name, email, number, instructor } = req.body
   const emailMessage = `<p>You will receive addition information once your email has been verified.</p>
-   <p><a href="https://express-capstone-backend.ngrok.io/confirm?email=${email}">Confirm Email</a></p>`
+   <p><a href="${BACKEND_SERVER}/confirm?email=${email}">Confirm Email</a></p>`
 
   const transporter = nodemailer.createTransport({
     service: 'gmail',

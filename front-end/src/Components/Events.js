@@ -2,11 +2,13 @@ import React from 'react'
 import axios from 'axios'
 
 class Events extends React.Component {
+  _isMounted = false
   state = {
     events: []
   }
 
   getEvents = () => {
+    this._isMounted = true
     axios.get('/events')
       .then(response => {
         this.setState({

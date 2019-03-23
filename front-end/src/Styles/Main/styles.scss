@@ -1,0 +1,19 @@
+//COLOURS//
+$lightBlueGrey: #eceff1;
+$blueGrey: #cfd8dc;
+$mercury: #E1E1E1;
+$black: #323232;
+
+.main__wrapper {
+  
+  .main__container {
+    background-color: #fafafa;
+    padding: 15px;
+    text-align: center;
+
+    img {   
+      max-width: 400px; 
+      width: 95%;
+    }
+  }
+}

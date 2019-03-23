@@ -2,13 +2,13 @@ import React from 'react'
 import axios from 'axios'
 
 class Contact extends React.Component {
-  // _isMounted = false
+  _isMounted = false
   state = {
     dancers: [],
   }
 
   getDancers = () => {
-    // this._isMounted = true
+    this._isMounted = true
     axios.get('/dancers')
       .then(response => {
         this.setState({
@@ -70,7 +70,7 @@ class Contact extends React.Component {
             />
             NUMBER:
             <input
-              type='text'
+              type='number'
               placeholder='ex: 7781234567'
               ref={self => { this.numberInput = self }}
             />
@@ -86,6 +86,5 @@ class Contact extends React.Component {
     )
   }
 }
-
 
 export default Contact

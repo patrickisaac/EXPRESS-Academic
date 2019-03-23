@@ -3,13 +3,13 @@ import axios from 'axios'
 import { Link } from 'react-router-dom'
 
 class Dancers extends React.Component {
-  // _isMounted = false
+  _isMounted = false
   state = {
     dancers: [],
   }
 
   getDancers = () => {
-    // this._isMounted = true
+    this._isMounted = true
     axios.get('/dancers')
       .then(response => {
         this.setState ({

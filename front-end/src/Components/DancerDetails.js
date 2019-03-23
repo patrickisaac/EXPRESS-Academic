@@ -1,6 +1,7 @@
 import React from 'react'
 import axios from 'axios'
 import CommentSection from './CommentSection'
+import BookNowBtn from './BookNowBtn';
 
 class DancerDetails extends React.Component {
   state = {
@@ -40,6 +41,7 @@ class DancerDetails extends React.Component {
         </ul>
         <iframe src={video} title={name}></iframe>
         <CommentSection comments={this.state.comments}/>
+        <BookNowBtn />
       </div>
     )
   }

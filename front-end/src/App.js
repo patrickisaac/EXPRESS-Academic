@@ -6,7 +6,7 @@ import Main from './Components/Main'
 import Dancers from './Components/Dancers'
 import Events from './Components/Events'
 import Contact from './Components/Contact'
-import DancerDetails from './Components/DancerDetails';
+import DancerDetails from './Components/DancerDetails'
 
 const App = () => (
     <div>

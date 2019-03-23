@@ -1,0 +1,37 @@
+//COLOURS//
+$lightBlueGrey: #eceff1;
+$blueGrey: #cfd8dc;
+$mercury: #E1E1E1;
+$black: #323232;
+
+
+.navbar__wrapper {
+  display: flex;
+  background-color: $lightBlueGrey;
+  padding: 1.2%;
+  
+  .navbar__container {
+    display: flex;
+    align-items: center;
+  
+    .activeRoute {
+      border-bottom-color: $blueGrey;
+      border-bottom-style: solid;
+    }
+  
+    .logo {
+      width: 70px;
+      margin: 6px;
+    }
+  
+    .navbar__link {
+      text-decoration: none;
+      color: $black;
+      font-size: 0.9rem;
+      margin: 10px;
+      padding: 2px;
+    }
+  }
+}
+
+
