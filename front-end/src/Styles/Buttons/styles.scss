@@ -5,13 +5,18 @@ $mercury: #E1E1E1;
 $black: #323232;
 
 button {
+  cursor: pointer;
   background-color: $lightBlueGrey;
   padding: 20px;
   border: 2px solid $black;
-  border-radius: 5px;
+  border-radius: 10px;
   font-weight: bold
 }
 
 .main__button-container {
   margin: 30px;
+}
+
+.info__button-container {
+  margin: 10px;
 }
