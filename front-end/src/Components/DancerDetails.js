@@ -2,6 +2,7 @@ import React from 'react'
 import axios from 'axios'
 import CommentSection from './CommentSection'
 import BookNowBtn from './BookNowBtn';
+import '../Styles/DancerDetails/styles.css'
 
 class DancerDetails extends React.Component {
   state = {
@@ -26,21 +27,36 @@ class DancerDetails extends React.Component {
   }
 
   render() {
-    const { name, bio, quote, video } = this.state.dancerDetail
+    const { name, image, bio, quote, video } = this.state.dancerDetail
     const locationsList = this.state.locations.map((location, id) => {
       return <li key={id}>{location}</li>
     })
     return (
-      <div>
-        <h2>Dancer Details</h2>
-        <h3>{name}</h3>
-        <p>{bio}</p>
-        <p>{quote}</p>
-        <ul>
-          {locationsList}
-        </ul>
-        <iframe src={video} title={name}></iframe>
-        <CommentSection comments={this.state.comments}/>
+      <div className='details__wrapper'>
+        <div className='topHalf__container'>
+          <div>
+            <img className='dancer__img' src={image} alt={name} />
+          </div>
+          <div>
+            <img src='../Assets/speaker.svg' alt='speaker' />
+            <p>{bio}</p>
+          </div>
+        </div>
+        <div className="bottomHalf__container">
+          <div>
+            <h4>What makes a great dancer?</h4>
+            <p><i>{quote}</i></p>
+            <img src='../Assets/globe.svg' alt='globe' />
+            <h4>Places {name} has taught:</h4>
+            <ul>
+              {locationsList}
+            </ul>
+          </div>
+          <div>
+            <iframe src={video} title={name}></iframe>
+          </div>
+        </div>
+        <CommentSection comments={this.state.comments} />
         <BookNowBtn />
       </div>
     )

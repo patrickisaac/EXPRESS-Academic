@@ -1,0 +1,102 @@
+li {
+  list-style: none;
+  margin-left: -35px;
+  padding: 2px;
+}
+
+p {
+  padding: 2px;
+  line-height: 24px;
+  max-height: 400px;
+  overflow: scroll;
+}
+
+.details__wrapper {
+  margin: 25px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row wrap;
+          flex-flow: row wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  text-align: center;
+}
+
+.topHalf__container {
+  max-width: 300px;
+  text-align: center;
+}
+
+.topHalf__container .dancer__img {
+  width: 280px;
+  border-radius: 15px;
+}
+
+.bottomHalf__container {
+  max-width: 300px;
+  text-align: center;
+}
+
+@media (min-width: 650px) {
+  .details__wrapper {
+    margin: 25px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-flow: column wrap;
+            flex-flow: column wrap;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    text-align: center;
+  }
+  .topHalf__container {
+    max-width: 900px;
+    text-align: center;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    padding: 12px;
+    border-bottom: 1px solid #323232;
+  }
+  .topHalf__container div {
+    margin: 12px;
+  }
+  .bottomHalf__container {
+    max-width: 900px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    text-align: center;
+    padding: 12px;
+    border-bottom: 1px solid #323232;
+  }
+  .bottomHalf__container div {
+    margin: 12px;
+  }
+}
+/*# sourceMappingURL=styles.css.map */
