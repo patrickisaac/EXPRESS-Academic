@@ -1,5 +1,11 @@
 import React from 'react'
 import axios from 'axios'
+import { Link } from 'react-router-dom'
+import '../Styles/Events/styles.css'
+
+const date = (d) => {
+  return new Date(d).toLocaleDateString()
+}
 
 class Events extends React.Component {
   _isMounted = false
@@ -23,26 +29,37 @@ class Events extends React.Component {
 
   render() {
     const eventList = this.state.events.map((event, id) => {
-      if(event.logo || event.summary !== null) {
+      if (event.logo || event.summary !== null) {
         return (
-          <div key={id}>
-          <h2>{event.name.text}</h2>
-          <h3>{event.summary}</h3>
-          <p>{event.start.local}</p>
-          <img src={event.logo.original.url} width='150' alt='' />
-          </div>
+          <Link className='event__links' to={event.url} key={id}>
+            <div className='event__container'>
+              <div>
+                <img src={event.logo.original.url} alt='event' />
+              </div>
+              <div className='event__information'>
+                <h4>{event.name.text}</h4>
+                <p>{event.summary}</p>
+                <p>{date(event.start.local)}</p>
+              </div>
+            </div>
+          </Link>
         )
       }
       return (
-        <div key={id}>
-        <h2>{event.name.text}</h2>
-        <p>{event.start.local}</p>
-        </div>
+        <Link className='event__links' to={event.url} key={id}>
+          <div className='event__container'>
+            <p><i>IMAGE NOT AVAILABLE</i></p>
+            <div className='event__information'>
+              <h4>{event.name.text}</h4>
+              <p><i>SUMMARY NOT AVAILABLE</i></p>
+              <p>{date(event.start.local)}</p>
+            </div>
+          </div>
+        </Link>
       )
     })
     return (
-      <div>
-        <h2>EVENTS</h2>
+      <div className='event__wrapper'>
         {eventList}
       </div>
     )

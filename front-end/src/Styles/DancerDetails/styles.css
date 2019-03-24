@@ -1,7 +1,7 @@
 li {
   list-style: none;
   margin-left: -35px;
-  padding: 2px;
+  padding: 4px;
 }
 
 p {
@@ -96,6 +96,13 @@ p {
     border-bottom: 1px solid #323232;
   }
   .bottomHalf__container div {
+    margin: 12px;
+  }
+  .comment__container {
+    max-width: 800px;
+    margin: 24px;
+  }
+  .comment__container li {
     margin: 12px;
   }
 }

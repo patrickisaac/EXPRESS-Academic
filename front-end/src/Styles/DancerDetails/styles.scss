@@ -7,7 +7,7 @@ $black: #323232;
 li {
   list-style: none;
   margin-left: -35px;
-  padding: 2px;
+  padding: 4px;
 }
 
 p {
@@ -75,6 +75,15 @@ p {
     border-bottom: 1px solid $black;
 
     div {
+      margin: 12px;
+    }
+  }
+
+  .comment__container {
+    max-width: 800px;
+    margin: 24px;
+
+    li {
       margin: 12px;
     }
   }

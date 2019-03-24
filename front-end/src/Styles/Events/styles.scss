@@ -1,0 +1,44 @@
+//COLOURS//
+$lightBlueGrey: #eceff1;
+$blueGrey: #cfd8dc;
+$mercury: #E1E1E1;
+$black: #323232;
+
+.event__links {
+  cursor: pointer;
+  text-decoration: none;
+  color: $black;
+}
+
+.event__wrapper {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  align-items: center;
+
+  .event__container {
+    background-color: white;
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: center;
+    align-items: center;
+    margin: 30px;
+    border: 1px solid $black;
+    border-radius: 17px;
+  
+    img {
+      width: 205px;
+      height: 170px;
+      border-top-left-radius: 15px;
+      border-top-right-radius: 15px;
+    }
+
+    .event__information {
+      text-align: center;
+      max-width: 190px;
+      max-height: 200px;
+      overflow: scroll;
+      padding: 6px;
+    }
+  }
+}
