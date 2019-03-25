@@ -1,6 +1,8 @@
 import React from 'react'
 import axios from 'axios'
 import HeroContact from '../Components/HeroContact'
+import Swal from 'sweetalert2/dist/sweetalert2.js'
+import 'sweetalert2/src/sweetalert2.scss'
 import '../Styles/Contact/styles.css'
 
 class Contact extends React.Component {
@@ -29,7 +31,11 @@ class Contact extends React.Component {
       this.emailInput.value < 2 ||
       this.numberInput.value < 2
     ) {
-      return alert('Please provide valid information')
+      return Swal.fire({
+        type: 'error',
+        title: 'Oops...',
+        text: 'Please provide valid information!'
+      })
     } else {
       axios.post('/contact', {
         name: this.nameInput.value,
@@ -43,7 +49,11 @@ class Contact extends React.Component {
           this.numberInput.value = ''
           this.instructorInput.value = ''
         })
-      return alert('Be on the lookout for an email!')
+      return Swal.fire({
+        type: 'success',
+        title: 'Sent!',
+        text: 'Please be on the lookout for an email!'
+      })
     }
   }
 

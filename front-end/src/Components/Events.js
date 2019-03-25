@@ -1,6 +1,7 @@
 import React from 'react'
 import axios from 'axios'
 import HeroEvents from '../Components/HeroEvents'
+import EventBtn from '../Components/EventBtn'
 import '../Styles/Events/styles.css'
 
 const date = d => {
@@ -31,29 +32,31 @@ class Events extends React.Component {
       if (event.logo || event.summary !== null) {
         return (
           <div className='event__container' key={id}>
-            <div>
+              <div>
               <img src={event.logo.original.url} alt='event' />
-            </div>
-            <div className='event__information'>
-              <h4>{event.name.text}</h4>
-              <p>{event.summary}</p>
-              <p>{date(event.start.local)}</p>
-            </div>
+              </div>
+              <div className='event__information'>
+                <h4>{event.name.text}</h4>
+                <p>{event.summary}</p>
+                <p>{date(event.start.local)}</p>
+              </div>
+              <a href={event.url}><EventBtn /></a>
           </div>
         )
       }
       return (
         <div className='event__container' key={id}>
-          <p>
-            <i>IMAGE NOT AVAILABLE</i>
-          </p>
-          <div className='event__information'>
-            <h4>{event.name.text}</h4>
             <p>
-              <i>SUMMARY NOT AVAILABLE</i>
+              <i>IMAGE NOT AVAILABLE</i>
             </p>
-            <p>{date(event.start.local)}</p>
-          </div>
+            <div className='event__information'>
+              <h4>{event.name.text}</h4>
+              <p>
+                <i>SUMMARY NOT AVAILABLE</i>
+              </p>
+              <p>{date(event.start.local)}</p>
+            </div>
+            <a href={event.url}><EventBtn /></a>
         </div>
       )
     })
