@@ -1,0 +1,44 @@
+//COLOURS//
+$lightBlueGrey: #eceff1;
+$blueGrey: #cfd8dc;
+$mercury: #E1E1E1;
+$black: #323232;
+
+.form__wrapper {
+  display: flex;
+  justify-content: center;
+
+  .form__container {
+    text-align: center;
+    border: 1px solid $black;
+    border-radius: 4px;
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: center;
+    align-items: center;
+    margin: 25px;
+    background-color: white;
+    width: 400px;
+    height: 420px;
+
+    img {
+      margin: 12px;
+    }
+    
+    .input {
+      display: block;
+      margin: 10px;
+      text-align: center;
+      border: 1.5px solid $black;
+      border-radius: 5px;
+      line-height: 24px;
+    }
+  
+    button {
+      margin: 12px;
+      padding-left: 48px;
+      padding-right: 48px;
+    }
+  }
+
+}

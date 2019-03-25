@@ -1,0 +1,20 @@
+//COLOURS//
+$lightBlueGrey: #eceff1;
+$blueGrey: #cfd8dc;
+$mercury: #E1E1E1;
+$black: #323232;
+
+.hero__container {
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: center;
+  align-items: center;
+  height: 345px;
+  background-color: #fafafa;
+  padding: 12px;
+
+  h1 {
+    font-size: 75px;
+    color: #616161;
+  }
+}

@@ -1,3 +1,7 @@
+.wrapper {
+  background-color: white;
+}
+
 .dancer__wrapper {
   display: -webkit-box;
   display: -ms-flexbox;

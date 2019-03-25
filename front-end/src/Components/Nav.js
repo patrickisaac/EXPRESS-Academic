@@ -13,22 +13,13 @@ class Nav extends React.Component {
             </Link>
           </div>
           <div className='navbar__links'>
-            <NavLink 
-            className='navbar__link' 
-            activeClassName='activeRoute' 
-            to='/dancers'>
+            <NavLink className='navbar__link' activeClassName='activeRoute' to='/dancers'>
               Dancers
             </NavLink>
-            <NavLink 
-            className='navbar__link' 
-            activeClassName='activeRoute' 
-            to='/events'>
+            <NavLink className='navbar__link' activeClassName='activeRoute' to='/events'>
               Events
             </NavLink>
-            <NavLink 
-            className='navbar__link' 
-            activeClassName='activeRoute' 
-            to='/contact'>
+            <NavLink className='navbar__link' activeClassName='activeRoute' to='/contact'>
               Contact
             </NavLink>
           </div>
