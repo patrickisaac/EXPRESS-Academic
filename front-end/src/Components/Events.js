@@ -1,5 +1,6 @@
 import React from 'react'
 import axios from 'axios'
+import HeroEvents from '../Components/HeroEvents'
 import '../Styles/Events/styles.css'
 
 const date = d => {
@@ -56,7 +57,12 @@ class Events extends React.Component {
         </div>
       )
     })
-    return <div className='event__wrapper'>{eventList}</div>
+    return (
+    <div>
+      <HeroEvents />
+      <div className='event__wrapper'>{eventList}</div>
+    </div>
+    )
   }
 }
 

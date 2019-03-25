@@ -1,5 +1,6 @@
 import React from 'react'
 import axios from 'axios'
+import HeroContact from '../Components/HeroContact'
 import '../Styles/Contact/styles.css'
 
 class Contact extends React.Component {
@@ -53,40 +54,43 @@ class Contact extends React.Component {
       )
     })
     return (
-      <div className='form__wrapper'>
-        <div className='form__container'>
-          <img src='../Assets/headphones.svg' alt='headphones' />
-          <form>
-            NAME:
-            <input
-              type='text'
-              placeholder='Enter your name'
-              ref={self => { this.nameInput = self }}
-              className='input'
-            />
-            EMAIL:
-            <input
-              type='text'
-              placeholder='Enter email address'
-              ref={self => { this.emailInput = self }}
-              className='input'
-            />
-            NUMBER:
-            <input
-              type='text'
-              placeholder='ex: 7781234567'
-              ref={self => { this.numberInput = self }}
-              className='input'
-            />
-            INSTRUCTOR:
-            <select
-              className='input'
-              ref={self => { this.instructorInput = self }}>
-              <option value=''></option>
-              {dancersList}
-            </select>
-          </form>
-          <button onClick={this.bookDancer}>BOOK NOW!</button>
+      <div>
+        <HeroContact />
+        <div className='form__wrapper'>
+          <div className='form__container'>
+            <img src='../Assets/headphones.svg' alt='headphones' />
+            <form>
+              NAME:
+              <input
+                type='text'
+                placeholder='Enter your name'
+                ref={self => { this.nameInput = self }}
+                className='input'
+              />
+              EMAIL:
+              <input
+                type='text'
+                placeholder='Enter email address'
+                ref={self => { this.emailInput = self }}
+                className='input'
+              />
+              NUMBER:
+              <input
+                type='text'
+                placeholder='ex: 7781234567'
+                ref={self => { this.numberInput = self }}
+                className='input'
+              />
+              INSTRUCTOR:
+              <select
+                className='input'
+                ref={self => { this.instructorInput = self }}>
+                <option value=''></option>
+                {dancersList}
+              </select>
+            </form>
+            <button onClick={this.bookDancer}>BOOK NOW!</button>
+          </div>
         </div>
       </div>
     )
