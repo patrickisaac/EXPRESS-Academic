@@ -5,7 +5,7 @@ class EventBtn extends React.Component {
   render() {
     return (
       <div className='event__button-container'>
-          <button>BUY TICKETS</button>
+        <button>BUY TICKETS</button>
       </div>
     )
   }

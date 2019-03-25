@@ -1,5 +1,5 @@
 import React from 'react'
-import DancerBtn from './DancerBtn'
+import ViewDancerBtn from './ViewDancerBtn'
 import '../Styles/AboutSection/styles.css'
 
 class AboutSection extends React.Component {
@@ -17,7 +17,7 @@ class AboutSection extends React.Component {
             lessons. Join the movement by expressing your thoughts through movement itself.
           </p>
         </div>
-        <DancerBtn />
+        <ViewDancerBtn />
       </div>
     )
   }

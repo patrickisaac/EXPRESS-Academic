@@ -1,33 +1,12 @@
 import React from 'react'
-import axios from 'axios'
 import { Link } from 'react-router-dom'
-import HeroDancer from './HeroDancer'
 import MoreInfoBtn from './MoreInfoBtn'
 import '../Styles/Dancers/styles.css'
 import '../Styles/Buttons/styles.css'
 
 class Dancers extends React.Component {
-  _isMounted = false
-  state = {
-    dancers: [],
-  }
-
-  getDancers = () => {
-    this._isMounted = true
-    axios.get('/dancers')
-      .then(response => {
-        this.setState({
-          dancers: response.data
-        })
-      })
-  }
-
-  componentDidMount() {
-    this.getDancers()
-  }
-
   render() {
-    const dancersList = this.state.dancers.map((dancer, id) => {
+    const dancersList = this.props.dancers.map((dancer, id) => {
       return (
         <div className='dancer__container' key={id}>
           <div>
@@ -45,12 +24,7 @@ class Dancers extends React.Component {
       )
     })
     return (
-      <div>
-        <HeroDancer />
-        <div className='dancer__wrapper'>
-          {dancersList}
-        </div>
-      </div>
+        <div className='dancer__wrapper'>{dancersList}</div>
     )
   }
 }
