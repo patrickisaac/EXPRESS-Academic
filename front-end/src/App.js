@@ -9,23 +9,27 @@ import ContactPage from './Components/ContactPage'
 import DancerDetails from './Components/DancerDetails'
 import { BreakpointProvider } from 'react-socks'
 
-const App = () => (
-  <BreakpointProvider>
-    <div>
-      <BrowserRouter>
-        <div>
-          <Nav />
-          <Switch>
-            <Route exact path='/' component={Main} />
-            <Route exact path='/dancers' component={DancersPage} />
-            <Route path='/dancers/:id' component={DancerDetails} />
-            <Route path='/events' component={EventPage} />
-            <Route path='/contact' component={ContactPage} />
-          </Switch>
-        </div>
-      </BrowserRouter>
-    </div>
-  </BreakpointProvider>
-)
+class App extends React.Component {
+  render() {
+    return (
+      <BreakpointProvider>
+      <div>
+        <BrowserRouter>
+          <div>
+            <Nav />
+            <Switch>
+              <Route exact path='/' component={Main} />
+              <Route exact path='/dancers' component={DancersPage} />
+              <Route path='/dancers/:id' component={DancerDetails} />
+              <Route path='/events' component={EventPage} />
+              <Route path='/contact' component={ContactPage} />
+            </Switch>
+          </div>
+        </BrowserRouter>
+      </div>
+    </BreakpointProvider>
+    )
+  }
+} 
 
 export default App;
