@@ -30,7 +30,7 @@ class EventPage extends React.Component {
           <div className='line'></div>
           <p>Check out what's happening in Vancouver!</p>
         </div>
-        <Events events={this.state.events}/>
+        <Events events={this.state.events} />
       </div>
     )
   }

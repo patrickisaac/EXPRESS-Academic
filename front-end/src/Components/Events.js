@@ -41,7 +41,7 @@ class Events extends React.Component {
       )
     })
     return (
-        <div className='event__wrapper'>{eventList}</div>
+      <div className='event__wrapper'>{eventList}</div>
     )
   }
 }

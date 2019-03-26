@@ -24,7 +24,7 @@ class Dancers extends React.Component {
       )
     })
     return (
-        <div className='dancer__wrapper'>{dancersList}</div>
+      <div className='dancer__wrapper'>{dancersList}</div>
     )
   }
 }

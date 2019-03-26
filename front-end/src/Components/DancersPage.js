@@ -30,7 +30,7 @@ class DancersPage extends React.Component {
           <div className='line'></div>
           <p>View our local dancers!</p>
         </div>
-        <Dancers dancers={this.state.dancers}/>
+        <Dancers dancers={this.state.dancers} />
       </div>
     )
   }

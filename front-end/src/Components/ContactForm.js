@@ -64,9 +64,9 @@ class ContactForm extends React.Component {
       <div>
         <div className='form__wrapper'>
           <div className='form__container'>
-            <img src='../Assets/headphones.svg' alt='headphones' />
+            {/* <img src='../Assets/headphones.svg' alt='headphones' /> */}
             <form>
-              NAME:
+              <img src='../Assets/user.svg' alt='user' />
               <input
                 type='text'
                 placeholder='Enter your name'
@@ -75,7 +75,7 @@ class ContactForm extends React.Component {
                 }}
                 className='input'
               />
-              EMAIL:
+              <img src='../Assets/mail.svg' alt='email' />
               <input
                 type='text'
                 placeholder='Enter email address'
@@ -84,7 +84,7 @@ class ContactForm extends React.Component {
                 }}
                 className='input'
               />
-              NUMBER:
+              <img src='../Assets/phone.svg' alt='phone' />
               <input
                 type='text'
                 placeholder='ex: 7781234567'
@@ -93,7 +93,7 @@ class ContactForm extends React.Component {
                 }}
                 className='input'
               />
-              INSTRUCTOR:
+              <img src='../Assets/speaker.svg' alt='speaker' />
               <select
                 className='input'
                 ref={self => {
