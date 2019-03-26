@@ -6,7 +6,13 @@
 }
 
 .main__wrapper .main__container img {
-  max-width: 400px;
+  max-width: 300px;
   width: 95%;
+  margin-top: 20px;
+  margin-bottom: 25px;
+}
+
+.main__wrapper .main__container h3 {
+  color: #616161;
 }
 /*# sourceMappingURL=styles.css.map */

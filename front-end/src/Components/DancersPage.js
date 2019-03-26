@@ -27,7 +27,8 @@ class DancersPage extends React.Component {
       <div>
         <div className='hero__container'>
           <h1>Dancers</h1>
-          <h2>View our local dancers!</h2>
+          <div className='line'></div>
+          <p>View our local dancers!</p>
         </div>
         <Dancers dancers={this.state.dancers}/>
       </div>

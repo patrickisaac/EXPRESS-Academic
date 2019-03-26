@@ -17,10 +17,21 @@ $black: #323232;
   h1 {
     font-size: 65px;
     color: #616161;
+    margin-bottom: 10px;
   }
 
-  h2 {
-    font-size: 20px;
+  // h2 {
+  //   font-size: 20px;;
+  //   max-width: 320px;
+  // }
+  .line {
+    width: 250px;
+    border-top: 1px solid #616161;
+  }
+
+  p {
+    font-size: 20px;;
     max-width: 320px;
+    color: #616161;
   }
 }

@@ -27,7 +27,8 @@ class EventPage extends React.Component {
       <div>
         <div className='hero__container'>
           <h1>Events</h1>
-          <h2>Check out what's happening in Vancouver!</h2>
+          <div className='line'></div>
+          <p>Check out what's happening in Vancouver!</p>
         </div>
         <Events events={this.state.events}/>
       </div>

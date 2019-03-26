@@ -8,7 +8,8 @@ class ContactPage extends React.Component {
       <div>
       <div className='hero__container'>
         <h1>Contact Us!</h1>
-        <h2>You are moments away from learning from one of our local dancers!</h2>
+        <div className='line'></div>
+        <p>You are moments away from learning from one of our local dancers!</p>
       </div>
         <ContactForm />
       </div>

@@ -21,10 +21,17 @@
 .hero__container h1 {
   font-size: 65px;
   color: #616161;
+  margin-bottom: 10px;
 }
 
-.hero__container h2 {
+.hero__container .line {
+  width: 250px;
+  border-top: 1px solid #616161;
+}
+
+.hero__container p {
   font-size: 20px;
   max-width: 320px;
+  color: #616161;
 }
 /*# sourceMappingURL=styles.css.map */
