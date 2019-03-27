@@ -22,7 +22,11 @@ class ContactForm extends React.Component {
   }
 
   bookDancer = () => {
-    if (this.nameInput.value < 2 || this.emailInput.value < 2 || this.numberInput.value < 2) {
+    if (
+      this.nameInput.value < 2 ||
+      this.emailInput.value < 2 ||
+      this.numberInput.value < 2 ||
+      this.instructorInput.value === '') {
       return Swal.fire({
         type: 'error',
         title: 'Oops...',
