@@ -6,6 +6,8 @@ This is a web application consisting of all the things I have learned in the 3 m
 
 I build this web application using React.js for the front-end (CSS/SASS for styling) and Express.js with some MySQL for the back-end. Everything can be run via localhost, but I also deployed my app via NGROK.
 
+Concept of project was to promote local dance instructors in Vancouver and have them booked for private lessons. The contact form is used to send an email, followed by a text message to verify if the user is real prior to obtaining further information.
+
 Libraries i've used:
 
 Back-End:
