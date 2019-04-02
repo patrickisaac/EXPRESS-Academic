@@ -18,6 +18,7 @@ Dotenv
 Logger
 Nodemailer - for emailing when user inputs information on the contact form
 Nexmo - for sending out text messages once link has been verified
+MySQL - used for gathering information that was typed in the contact form (was using MAMP application - created table using SequelizeCLI)
 
 Front-End:
 React
