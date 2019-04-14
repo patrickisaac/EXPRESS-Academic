@@ -4,13 +4,11 @@ import ContactForm from './ContactForm'
 import Breakpoint, { setDefaultBreakpoints } from 'react-socks'
 import '../Styles/Buttons/styles.css'
 
-setDefaultBreakpoints([
-  { m: 550 }
-])
+setDefaultBreakpoints([{ m: 550 }])
 
 class BookNowBtn extends React.Component {
   state = {
-    open: false,
+    open: false
   }
 
   onOpenModal = () => {
@@ -32,7 +30,7 @@ class BookNowBtn extends React.Component {
           </Modal>
         </div>
       </Breakpoint>
-    );
+    )
   }
 }
 
