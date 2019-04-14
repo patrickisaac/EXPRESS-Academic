@@ -15,7 +15,7 @@ class DancerDetails extends React.Component {
     this.getDancerDetail()
   }
 
-  getDancerDetail = () => {
+  getDancerDetail() {
     axios.get(`/dancers/${this.props.match.params.id}`).then(response => {
       this.setState({
         dancerDetail: response.data,

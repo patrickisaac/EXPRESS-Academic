@@ -8,7 +8,7 @@ class EventPage extends React.Component {
     events: []
   }
 
-  getEvents = () => {
+  getEvents() {
     axios.get('/events').then(response => {
       this.setState({
         events: response.data

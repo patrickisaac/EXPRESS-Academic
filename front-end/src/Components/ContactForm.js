@@ -9,7 +9,15 @@ class ContactForm extends React.Component {
     dancers: []
   }
 
-  getDancers = () => {
+  // getDancers = () => {
+  //   axios.get('/dancers').then(response => {
+  //     this.setState({
+  //       dancers: response.data
+  //     })
+  //   })
+  // }
+
+  getDancers() {
     axios.get('/dancers').then(response => {
       this.setState({
         dancers: response.data
