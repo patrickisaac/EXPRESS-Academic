@@ -8,7 +8,7 @@ class ContactForm extends React.Component {
   state = {
     dancers: []
   }
-  
+
   getDancers() {
     axios.get('/dancers').then(response => {
       this.setState({
